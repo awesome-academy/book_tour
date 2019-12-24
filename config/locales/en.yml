@@ -37,6 +37,13 @@ en:
       p1: "who is a Ruby intern of Sun Asterisk"
       p2: "Email me: phan.hoang.trung@sun-asterisk.com"
   users:
+    omniauth_callbacks:
+      twitter:
+        success: "You are in..!"
+      facebook:
+        success: "You are in..!"
+      google_oauth2:
+        success: "You are in..!"
     new:
       title: "Sign Up"
       h1: "Sign Up"

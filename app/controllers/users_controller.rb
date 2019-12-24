@@ -7,14 +7,14 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     return if @user
 
-    flash[:danger] = t(".nonexist")
+    flash[:danger] = t ".nonexist"
     redirect_to root_path
   end
 
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t(".create_success")
+      flash[:success] = t ".create_success"
       redirect_to @user
     else
       render :new
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone_number,
-                                 :password, :password_confirmation)
+    params.require(:user).permit :name, :email, :phone_number,
+                                 :password, :password_confirmation
   end
 end

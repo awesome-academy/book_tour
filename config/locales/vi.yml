@@ -37,6 +37,13 @@ vi:
       p1: "thực tập sinh tại Sun Asterisk "
       p2: "Gửi email cho mình: phan.hoang.trung@sun-asterisk.com"
   users:
+    omniauth_callbacks:
+      twitter:
+        success: "Đăng nhập thành công..!"
+      facebook:
+        success: "Đăng nhập thành công..!"
+      google_oauth2:
+        success: "Đăng nhập thành công..!"
     new:
       title: "Đăng ký"
       h1: "Đăng ký"
