@@ -1,5 +1,6 @@
 class TourDetailsController < ApplicationController
   before_action :load_tour_detail, except: %i(index new create)
+  before_action :search_tour, only: :index
   load_and_authorize_resource
 
   def index
@@ -7,9 +8,9 @@ class TourDetailsController < ApplicationController
                       if params.key?(:soft_deleted)
                         TourDetail.includes(:tour).all
                                   .paginate(page: params[:page])
-                      elsif params.key?(:term)
-                        TourDetail.search(params[:term])
-                                  .paginate(page: params[:page])
+                      elsif params.key?(:q)
+                        @search.result.includes(:tour)
+                               .paginate(page: params[:page])
                       else
                         get_existed_tour_details
                       end
@@ -86,6 +87,10 @@ class TourDetailsController < ApplicationController
   end
 
   private
+
+  def search_tour
+    @search = TourDetail.ransack(params[:q])
+  end
 
   def tour_detail_params
     params.require(:tour_detail).permit :start_time, :end_time, :tour_id,

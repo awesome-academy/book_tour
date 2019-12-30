@@ -1,6 +1,12 @@
+<%= search_form_for @search, class: "form-inline" do |f| %>
+	<div class="form-group">
+    <%= f.text_field :name_cont, class: "form-control", placeholder: t(".cat_name") %><br>
+  </div>
+  <%= f.submit t(".search"), class: "btn btn-default search-btn"%>
+<% end %>
 <table>
   <thead>
-    <th> <%= t ".cat_name" %> </th>
+    <th> <%= sort_link(@search, :cat_name, t(".cat_name")) %> </th>
     <th> <%= t ".created_at" %> </th>
     <th> <%= t ".updated_at" %> </th>
     <th> <%= t ".operations" %> </th>
