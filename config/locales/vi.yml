@@ -31,7 +31,7 @@ vi:
     home:
       title: "Trang chủ"
       h1: "Chào mừng đến với ứng dụng đặt tour của Sun*"
-      h2: "Ứng dụng đặt tour của Sun*"
+      title: "Ứng dụng đặt tour của Sun*"
       signupnow: "Đăng ký ngay"
       start_time: "Ngày khởi hành"
       end_time: "Ngày về"
@@ -270,7 +270,7 @@ vi:
       update_success: "Thông tin của tour này đã được cập nhật"
       update_failed: "Cập nhật thông tin cho tour thất bại"
     show:
-      h2: "Đánh giá của khách hàng"
+      title: "Đánh giá của khách hàng"
       description: "Mô tả"
       start_time: "Ngày khởi hành:"
       end_time: "Ngày kết thúc:"
@@ -453,4 +453,83 @@ vi:
       like_more: "Không thể thích bài viết hơn một lần"
     destroy:
       cannot_unlike: "Khổng thể bỏ thích, thử lại sau nhé!"
+  devise:
+    confirmations:
+      new:
+        email: "Email"
+        resend: "Gửi lại hướng dẫn xác nhận tài khoản"
+    mailer:
+      confirmation_instructions:
+        welcome: "Chào mừng "
+        ins: "Bạn có thể xác nhận tài khoản qua đướng dẫn bên dưới: "
+        confirm: "Xác nhận tài khoản"
+      email_changed:
+        unconfirmed: "Chúng tôi liên hệ bạn để thông báo email của bạn đã và đang được thay đổi thành"
+        confirmed: "Chúng tôi liên hệ bạn để thông báo email của bạn đã được thay đổi thành"
+      password_change:
+        hello: "Xin chào"
+        message: "Chúng tôi liên hệ bạn để thông báo rằng mật khẩu của bạn đã được thay đổi"
+      reset_password_instructions:
+        hello: "Xin chào"
+        message_1: "Ai đó đã gửi yêu cầu thay đổi mật khẩu, bạn có thể thay đổi thông qua đường dẫn bên dưới"
+        message_2: "Nếu bạn không thực hiện yêu cầu này, vui lòng bỏ qua thư này"
+        message_3: "Mật khẩu của bạn sẽ không được thay đổi cho đến khi bạn truy cập vào đường dẫn và đặt mật khẩu mới"
+        change: "Thay đổi mật khẩu"
+    passwords:
+      edit:
+        title: "Thay đổi mật khẩu"
+        new_password: "Mật khẩu mới"
+        password_confirmation: "Xác nhận mật khẩu mới"
+        submit: "Thay đổi mật khẩu"
+      new:
+        title: "Bạn quên mật khẩu?"
+        email: "Địa chỉ email"
+        submit: "Gửi cho tôi hướng dẫn đặt lại mật khẩu"
+    registrations:
+      edit:
+        title: "Chỉnh sửa"
+        name: "Tên"
+        phone_number: "Số điện thoại"
+        email: "Email"
+        waitting: "Đang chờ xác nhận cho: "
+        password: "Mật khẩu"
+        notice: "(bỏ trống nếu bạn không muốn thay đổi)"
+        minium: "kí tự tối thiểu"
+        password_confirmation: "Xác nhận mật khẩu"
+        current_password: "Mật khẩu hiện thời"
+        notice2: "(chúng tôi cần mật khẩu hiện thời để xác nhận)"
+        submit: "Cập nhật"
+        h3: "Hủy tài khoản"
+        unhappy: "Bạn không hài lòng?"
+        btn: "Hủy tài khoản"
+        confirm: "Bạn chắc chứ?"
+        back: "Quay lại"
+      new:
+        title: "Đăng ký"
+        name: "Tên"
+        phone_number: "Số điện thoại"
+        email: "Email"
+        password: "Mật khẩu"
+        minium: "kí tự tối thiểu)"
+        password_confirmation: "Xác nhận mật khẩu"
+        submit: "Đăng ký"
+        facebook: "Đăng nhập với Facebook"
+        twitter: "Đăng nhập với Twitter"
+        google: "Đăng nhập với Google"
+    sessions:
+      new:
+        title: "Đăng nhập"
+        email: "Email"
+        password: "Mật khẩu"
+        remember: "Ghi nhớ phiên đăng nhập"
+        submit: "Đăng nhập"
+        facebook: "Đăng nhập với Facebook"
+        twitter: "Đăng nhập với Twitter"
+        google: "Đăng nhập với Google"
+    shared:
+      links:
+        login: "Đăng nhập"
+        signup: "Đăng ký"
+        forgot: "Quên mật khẩu?"
+        confirm_failed: "Bạn không nhận được hướng dẫn xác nhận tài khoản?"
 

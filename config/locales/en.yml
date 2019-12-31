@@ -31,7 +31,7 @@ en:
     home:
       title: "Home"
       h1: "Welcome to Sun* Tour Booking"
-      h2: "Sun* Tour Booking Application" 
+      title: "Sun* Tour Booking Application" 
       signupnow: "Sign up now!"
       start_time: "Departure date"
       end_time: "Return date"
@@ -265,7 +265,7 @@ en:
       update_success: "Details of the tour has been updated"
       update_failed: "Fail to update details of the tour"
     show:
-      h2: "Customer reviews"
+      title: "Customer reviews"
       description: "Description"
       start_time: "Departure date: "
       end_time: "End date: "
@@ -448,3 +448,82 @@ en:
       like_more: "Cannot like a post more than once"
     destroy:
       cannot_unlike: "Cannot unlike this post, try again later!"
+  devise:
+    confirmations:
+      new:
+        email: "Email"
+        resend: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome"
+        ins: "You can confirm your account email through the link below: "
+        confirm: "Confirm my account"
+      email_changed:
+        unconfirmed: "We're contacting you to notify you that your email is being changed to"
+        confirmed: "We're contacting you to notify you that your email has been changed to"
+      password_change:
+        hello: "Hello"
+        message: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        hello: "Hello"
+        message_1: "Someone has requested a link to change your password. You can do this through the link below."
+        message_2: "If you didn't request this, please ignore this email."
+        message_3: "Your password won't change until you access the link above and create a new one."
+        change: "Change my password"
+    passwords:
+      edit:
+        title: "Change your password"
+        new_password: "New password"
+        password_confirmation: "Confirm new password"
+        submit: "Change my password"
+      new:
+        title: "Forgot your password?"
+        email: "Email"
+        submit: "Send me reset password instructions"
+    registrations:
+      edit:
+        title: "Edit"
+        name: "Name"
+        phone_number: "Phone number"
+        email: "Email"
+        waitting: "Currently waiting confirmation for:"
+        password: "Password"
+        notice: "(leave blank if you don't want to change it)"
+        minium: "characters minium"
+        password_confirmation: "Password confirmation"
+        current_password: "Current password"
+        notice2: "(we need your current password to confirm your changes)"
+        submit: "Update"
+        h3: "Cancel my account"
+        unhappy: "Unhappy?"
+        btn: "Cancel my account"
+        confirm: "Are you sure?"
+        back: "Back"
+      new:
+        title: "Sign up"
+        name: "Name"
+        phone_number: "Phone number"
+        email: "Email"
+        password: "Password"
+        minium: "characters minium)"
+        password_confirmation: "Password confirmation"
+        submit: "Sign up"
+        facebook: "Sign in with Facebook"
+        twitter: "Sign in with Twitter"
+        google: "Sign in with Google"
+    sessions:
+      new:
+        title: "Log in"
+        email: "Email"
+        password: "Password"
+        remember: "Remember me"
+        submit: "Log in"
+        facebook: "Sign in with Facebook"
+        twitter: "Sign in with Twitter"
+        google: "Sign in with Google"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot: "Forgot your password"
+        confirm_failed: "Didn't receive confirmation instructions?"

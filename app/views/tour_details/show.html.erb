@@ -57,7 +57,7 @@
 </div>
 
 <div class="row">
-  <h2 class="reviews"><%= t ".h2"%></h2>
+  <h2 class="reviews"><%= t ".title"%></h2>
   <% if logged_in? %>
     <%= link_to t(".review"), new_review_path(tour_detail: @tour_detail.id, user: current_user.id), data: { modal: true }, class: "btn btn-info review-btn" %>
   <% end %>
