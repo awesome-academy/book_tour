@@ -6,8 +6,8 @@
     <%= t ".h2"%>
   </h2>
 
-  <% unless logged_in? %>
-    <%= link_to t(".signupnow"), signup_path, class: "btn btn-lg btn-primary" %>
+  <% unless user_signed_in? %>
+    <%= link_to t(".signupnow"), new_user_registration_path, class: "btn btn-lg btn-primary" %>
   <% end %>
 </div>
 <div style="margin-top: 100px;">

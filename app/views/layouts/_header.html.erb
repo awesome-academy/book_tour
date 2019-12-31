@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t(".categories"), categories_path %>
         <li><%= link_to t(".tour_details"), tour_details_path %></li>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <% if current_user&.admin?%>
             <li><%= link_to t(".users"), users_path %></li>
             <li><%= link_to t(".tours"), tours_path %></li>
@@ -19,15 +19,15 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t(".profile"), current_user %></li>
-              <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
+              <li><%= link_to t(".settings"), edit_user_registration_path %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to t(".logout"), logout_path, method: :delete %>
+                <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to t(".login"), login_path %></li>
+          <li><%= link_to t(".login"), new_user_session_path %></li>
         <% end %>
       </ul>
     </nav>
