@@ -113,7 +113,7 @@ class BookingsController < ApplicationController
   def hook
     params.permit!
     status = params[:payment_status]
-    return unless status == "Completed"
+    render nothing: true unless status == "Completed"
 
     @booking = Booking.find params[:invoice]
     @booking.update notification_params: params, status: 2,

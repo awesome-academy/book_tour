@@ -399,6 +399,7 @@ en:
       updated_at: "Updated at"
       operations: "Operations"
       confirm: "Are your sure?"
+      revenue_detail_btn: "See in detail"
     show:
       title: "Detail of revenue"
       h1: "Revenue of "
@@ -412,6 +413,8 @@ en:
     destroy:
       delete_success: "This record of revenue has been deleted"
       delete_failed: "Fail to delete the record of this revenue"
+    table:
+      title: "Revenue in detail"
   reviews:
     nonexist: "The review is not exist."
     index:

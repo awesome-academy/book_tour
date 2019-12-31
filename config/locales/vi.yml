@@ -402,6 +402,7 @@ vi:
       updated_at: "Cập nhật lúc"
       operations: "Thao tác"
       confirm: "Bạn chắc chứ?"
+      revenue_detail_btn: "Xem chi tiết"
     show:
       title: "Lợi nhuận chi tiết"
       h1: "Lợi nhuận của "
@@ -417,6 +418,8 @@ vi:
       delete_failed: "Xóa bản ghi lợi nhuận thất bại"
       cancel_success: "Yêu cầu hủy đơn đặt chỗ của bạn dã được cập nhật"
       no_right: "Bạn không thể hủy đặt chỗ sau khi đơn đã được xác nhận. Vui lòng liên hệ chúng tôi!"
+    table:
+      title: "Thống kê lợi nhuận chi tiết"
   reviews:
     nonexist: "Không tìm thấy đánh giá này"
     index:

@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree
 //= require cloudinary
+//= require chartkick
+//= require Chart.bundle
