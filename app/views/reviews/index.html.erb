@@ -1,7 +1,7 @@
 <% if @reviews.present? %>
   <% @reviews.each do |review|%>
       <div class="col-md review-section">
-        <% if current_user == review.user || current_user&.admin?%>
+        <% if can? :destroy, review%>
           <div class="reviews-delete">
             <%= link_to review, method: :delete,
                                         data: { confirm: t(".confirm") }, class: "btn btn-sm btn-light" do %>

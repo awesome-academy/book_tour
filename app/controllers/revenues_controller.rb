@@ -1,7 +1,6 @@
 class RevenuesController < ApplicationController
-  include CheckAdmin
-  before_action :admin_user
   before_action :load_revenue, only: %i(show destroy)
+  load_and_authorize_resource
 
   def index
     @revenues = Revenue.includes(:tour_detail).all.paginate(page: params[:page])
@@ -25,6 +24,11 @@ class RevenuesController < ApplicationController
       flash[:danger] = t ".delete_failed"
     end
     redirect_to revenues_path
+  end
+
+  def revenue_detail
+    @revenues = Revenue.includes(:tour_detail).all.paginate(page: params[:page])
+    render :table
   end
 
   private

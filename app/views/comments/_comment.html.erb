@@ -3,8 +3,8 @@
     <div class="comment-info"> 
       <p ><%= comment.user.name %> : </p> <%= comment.content %>
     </div>
-    <%if logged_in? %>
-      <%if current_user&.admin? || current_user == comment.user%>
+    <%if user_signed_in? %>
+      <%if can? :destroy, comment%>
         <%= link_to t(".delete"), comment_path(comment), method: :delete,
                             data: { confirm: t(".confirm") } %>
       <% end %>

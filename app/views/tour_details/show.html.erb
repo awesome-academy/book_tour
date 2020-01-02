@@ -33,7 +33,7 @@
       </div>
       <div class = "col-md-6">
         <div class= "btn-actions">
-          <% if logged_in? %>
+          <% if user_signed_in? %>
             <div class="tour-btn">
               <% if @tour_detail.people_number != Settings.out_of_slots%>
                 <p class = "booking-text"><%= @tour_detail.price %> per person</p>
@@ -58,15 +58,15 @@
 
 <div class="row">
   <h2 class="reviews"><%= t ".title"%></h2>
-  <% if logged_in? %>
+  <% if user_signed_in? %>
     <%= link_to t(".review"), new_review_path(tour_detail: @tour_detail.id, user: current_user.id), data: { modal: true }, class: "btn btn-info review-btn" %>
   <% end %>
   <%unless get_reviews(@tour_detail.id).empty? %>
     <% get_reviews(@tour_detail.id).each do |review|%>
       <div class="col-md review-section">
         <div class="review-btn-section">
-        <%if logged_in? %>
-          <% if current_user == review.user || current_user&.admin? %>
+        <%if user_signed_in? %>
+          <% if can? :destroy, review %>
             <div class="review-delete-btn">
               <%= link_to review, method: :delete,
                                           data: { confirm: t("reviews.index.confirm") }, class: "btn btn-sm btn-light" do %>
@@ -90,7 +90,7 @@
           </div>
         </div>
         <p class="like" id="likes" ><%= review.likes.count %> <%= (review.likes.count) == Settings.like_count ? t(".like") : t(".likes") %></p>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
           <%= render partial: "like_form", locals: {review: review}%>
         <% end %>
         <button type="button" class="btn btn-default cmt">
@@ -100,7 +100,7 @@
 
         <div class="comment-section">  
           <%= render partial: "comments/comment", locals: {commentable: review} %>
-          <%if logged_in? %>
+          <%if user_signed_in? %>
             <%= render partial: "comments/form", locals: {commentable: review} %>
           <% end %>
         </div>

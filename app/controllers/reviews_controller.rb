@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :logged_in_user, only: %i(new update edit)
   before_action :load_review, except: %i(index new create)
   respond_to :html, :json
+  load_and_authorize_resource
 
   def index
     @reviews = if current_user&.admin?

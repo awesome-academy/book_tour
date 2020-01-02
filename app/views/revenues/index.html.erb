@@ -2,41 +2,12 @@
 <h1><%= t ".h1" %></h1>
 
 <div class="add_btn">
-  <%= link_to revenues_path(format: "xls"), class: "btn btn-sm btn-success" do %>
-    <span class="glyphicon glyphicon-save"></span>
+  <%= link_to revenue_detail_revenues_path, class: "btn btn-sm btn-info" do %>
+    <%= t ".revenue_detail_btn" %>
   <% end %>
 </div>
 
-<%= will_paginate %>
-
-<table>
-  <thead>
-    <th> <%= t ".tour_name" %> </th>
-    <th> <%= t ".revenue" %> </th>
-    <th> <%= t ".created_at" %> </th>
-    <th> <%= t ".updated_at" %> </th>
-    <th> <%= t ".operations" %> </th>
-  </thead>
-    <tbody>
-      <% @revenues.each do |revenue| %>
-        <tr>
-          <td> <%= revenue.tour_detail.tour.name %> </td>
-          <td> <%= revenue.revenue %> </td>
-          <td> <%= revenue.created_at %> </td>
-          <td> <%= revenue.updated_at %> </td>
-          <td>
-            <%= link_to revenue, class: "btn btn-sm btn-info" do %>
-              <span class="glyphicon glyphicon-eye-open"></span>
-            <% end %>
-            <%= link_to revenue, method: :delete,
-                                     data: { confirm: t(".confirm") }, class: "btn btn-sm btn-danger" do %>
-              <span class="glyphicon glyphicon-trash"></span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-</table>
 
 
-<%= will_paginate %>
+<%= bar_chart Revenue.includes(tour_detail: :tour)
+                     .group("name").sum(:revenue), prefix:"£" %>
