@@ -11,12 +11,12 @@ class Ability
       can [:index, :show, :destroy], Booking,
           user_id: current_user.id
       can [:new, :create, :pay, :hook], Booking
-      can [:new, :create], [Review, Comment, User]
+      can [:new, :create], [Review, Comment]
       can :index, Review
       can :destroy, [Review, Comment], user_id: current_user.id
       can :create, Like
       can :destroy, Like, user_id: current_user.id
-      can [:edit, :update], User, user_id: current_user.id
+      can [:show, :edit, :update], User
       can [:index, :show], [Category, TourDetail]
     end
   end

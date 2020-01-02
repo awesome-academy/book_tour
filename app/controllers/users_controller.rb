@@ -65,8 +65,8 @@ class UsersController < ApplicationController
 
   def correct_user
     @user = User.find(params[:id])
-    return if (current_user? @user) || current_user&.admin?
-
+    return if current_user == @user || current_user&.admin?
+    
     flash[:danger] = t "users.deny_1"
     redirect_to root_path
   end
