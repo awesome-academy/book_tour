@@ -1,0 +1,40 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".h1" %></h1>
+
+<div class="add_btn">
+<%= link_to new_user_registration_path, class: "btn btn-sm btn-primary" do %>
+  <span class="glyphicon glyphicon-plus"></span> <%= t ".add" %>
+<% end %>
+</div>
+
+<table>
+  <thead>
+    <th> <%= t ".cus_name" %> </th>
+    <th> <%= t ".email" %> </th>
+    <th> <%= t ".phone_number" %> </th>
+    <th> <%= t ".created_at" %> </th>
+    <th> <%= t ".updated_at" %> </th>
+    <th> <%= t ".operations" %> </th>
+  </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td> <%= link_to user.name, user %> </td>
+          <td> <%= user.email %> </td>
+          <td> <%= user.phone_number %> </td>
+          <td> <%= user.created_at %> </td>
+          <td> <%= user.updated_at %> </td>
+          <td>
+            <%= link_to edit_user_path(user), class: "btn btn-sm btn-warning" do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
+            <%= link_to user, method: :delete,
+                                     data: { confirm: t(".confirm") }, class: "btn btn-sm btn-danger" do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+<%= will_paginate @users%>

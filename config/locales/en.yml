@@ -63,12 +63,6 @@ en:
         success: "You are in..!"
       google_oauth2:
         success: "You are in..!"
-    form:
-      name: "Name"
-      email: "Email"
-      phone_number: "Phone number"
-      password: "Password"
-      confirmation: "Password confirmation"
     index:
       title: "All users"
       h1: "All users"
@@ -91,6 +85,11 @@ en:
       email: "Email"
       phone_number: "Phone number"
     edit:
+      name: "Name"
+      email: "Email"
+      phone_number: "Phone number"
+      password: "Password"
+      confirmation: "Password confirmation"
       title: "Edit user"
       h1: "Update profile"
       save: "Save changes"

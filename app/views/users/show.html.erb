@@ -1,0 +1,14 @@
+ <% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= t ".name" %> <%= @user.name %>
+      </h1>
+      <div class ="user-info">
+        <p class="user-label"> <%= t ".email" %> </p> <p><%= @user.email %></p>
+        <p class="user-label"> <%= t ".phone_number" %> <p> <%= @user.phone_number %> </p>
+      </div>
+    </section>
+  </aside>
+</div>

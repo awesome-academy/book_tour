@@ -45,4 +45,5 @@ Rails.application.routes.draw do
                                     sessions: "users/sessions",
                                     passwords: "users/passwords",
                                     confirmations: "users/confirmations" }
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
   end

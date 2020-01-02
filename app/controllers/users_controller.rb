@@ -3,34 +3,22 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(show create new)
   before_action :load_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, only: %i(destroy index)
+  before_action :admin_user, except: %i(new show create)
 
   def index
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @users = User.where.not(confirmed_at: nil).paginate(page: params[:page])
   end
 
-  def new
-    @user = User.new
-  end
+  def new; end
 
   def show
     return if @user
 
     flash[:danger] = t ".nonexist"
-    redirect_to root_path && return unless @user.activated == true
+    redirect_to root_path && return unless @user.confirmed_at.nil?
   end
 
-  def create
-    @user = User.new user_params
-    if @user.save
-      @user.send_activation_email
-      flash[:info] = t ".activation_notice"
-      redirect_to root_path
-    else
-      flash[:danger] = t ".create_failed"
-      render :new
-    end
-  end
+  def create; end
 
   def edit; end
 
@@ -65,11 +53,11 @@ class UsersController < ApplicationController
 
   # Confirms a logged-in user.
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:danger] = t ".please_login"
-    redirect_to login_path
+    redirect_to new_user_session_path
   end
 
   def correct_user
