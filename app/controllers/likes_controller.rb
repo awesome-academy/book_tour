@@ -24,6 +24,7 @@ class LikesController < ApplicationController
       format.html{redirect_back fallback_location: @tour_detail}
       format.js
     end
+    authorize! :destroy, @like
   end
 
   private

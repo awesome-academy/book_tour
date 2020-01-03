@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:warning] = exception.message
+    redirect_to root_path
+  end
+
   def hello
     render html: t("views.layouts.hello")
   end
@@ -24,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   # Confirms a logged-in user.
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     store_location
     flash[:danger] = t ".please_login"

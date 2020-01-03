@@ -1,7 +1,6 @@
 class ToursController < ApplicationController
-  include CheckAdmin
-  before_action :admin_user
   before_action :load_tour, except: %i(index new create)
+  load_and_authorize_resource
 
   def index
     @tours = if params.key?(:soft_deleted)

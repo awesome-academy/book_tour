@@ -1,11 +1,10 @@
 class BookingsController < ApplicationController
-  include CheckAdmin
-  before_action :admin_user, only: %i(edit update)
   before_action :load_tour_detail, only: %i(create reduce_quantity cal_revenue)
   before_action :load_booking, except: %i(index new create)
   after_action :reduce_quantity, :cal_revenue, only: :create
   after_action :increse_quantity, only: :destroy
   respond_to :html, :json
+  load_and_authorize_resource except: %i(edit update)
 
   def index
     @bookings = if current_user&.admin?

@@ -1,7 +1,6 @@
 class TourDetailsController < ApplicationController
-  include CheckAdmin
-  before_action :admin_user, except: %i(index show)
   before_action :load_tour_detail, except: %i(index new create)
+  load_and_authorize_resource
 
   def index
     @tour_details = if current_user&.admin?

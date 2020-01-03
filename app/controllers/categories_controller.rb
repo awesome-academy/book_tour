@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
-  include CheckAdmin
   before_action :load_category, except: %i(index new create)
-  before_action :admin_user, except: %i(index show)
+  authorize_resource
 
   def index
     @categories = Category.all.paginate(page: params[:page])

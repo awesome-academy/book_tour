@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  include CheckAdmin
   before_action :logged_in_user, except: %i(show create new)
   before_action :load_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
-  before_action :admin_user, except: %i(new show create)
+  load_and_authorize_resource
 
   def index
     @users = User.where.not(confirmed_at: nil).paginate(page: params[:page])
@@ -55,7 +54,7 @@ class UsersController < ApplicationController
   def logged_in_user
     return if user_signed_in?
 
-    store_location
+    store_location_for(:user, root_path)
     flash[:danger] = t ".please_login"
     redirect_to new_user_session_path
   end
