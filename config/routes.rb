@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :revenues
+  resources :revenues do
+    collection do
+      get :revenue_detail
+    end
+  end
   resources :reviews do
     resources :comments
     resources :likes
