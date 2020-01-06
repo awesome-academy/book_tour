@@ -1,0 +1,6 @@
+<%= search_form_for @search, class: "form-inline" do |f| %>
+	<div class="form-group">
+    <%= f.text_field :name_cont, class: "form-control", placeholder: t("categories.admin.cat_name") %><br>
+  </div>
+  <%= f.submit t("categories.admin.search"), class: "btn btn-default search-btn" %>
+<% end %>

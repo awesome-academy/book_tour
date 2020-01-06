@@ -30,8 +30,8 @@ vi:
   static_pages:
     home:
       title: "Trang chủ"
-      h1: "Chào mừng đến với ứng dụng đặt tour của Sun*"
-      title: "Ứng dụng đặt tour của Sun*"
+      big_title: "Chào mừng đến với ứng dụng đặt tour của Sun*"
+      small_title: "Ứng dụng đặt tour của Sun*"
       signupnow: "Đăng ký ngay"
       start_time: "Ngày khởi hành"
       end_time: "Ngày về"
@@ -71,9 +71,14 @@ vi:
       cus_name: "Tên người dùng"
       email: "Email"
       phone_number: "Số điện thoại"
-      create_at: "Tạo lúc"
+      created_at: "Tạo lúc"
       updated_at: "Cập nhật lúc"
       operations: "Các thao tác"
+      placeholder_1: "Tên"
+      placeholder_2: "Email"
+      placeholder_3: "Số điện thoại"
+      search: "Tìm kiếm"
+      add: "Thêm người dùng"
     new:
       title: "Đăng ký"
       h1: "Đăng ký"
@@ -197,6 +202,7 @@ vi:
       created_at: "Tạo lúc"
       updated_at: "Cập nhật lúc"
       operations: "Các thao tác"
+      search: "Tìm kiếm"
   tours:
     nonexist: "Tour này không tồn tại"
     form:
@@ -304,6 +310,8 @@ vi:
       searching: " Tìm kiếm ở đây nhé..."
       includes_deleted: "Gồm các tour đã xóa"
       excludes_deleted: "Chỉ các tour đang có"
+      placeholder: "Tên tour"
+      search: "Tìm kiếm"
     edit:
       title: "Chỉnh sửa thông tin tour"
       update: "Cập nhật"

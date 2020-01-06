@@ -30,8 +30,8 @@ en:
   static_pages:
     home:
       title: "Home"
-      h1: "Welcome to Sun* Tour Booking"
-      title: "Sun* Tour Booking Application" 
+      big_title: "Welcome to Sun* Tour Booking"
+      small_title: "Sun* Tour Booking Application" 
       signupnow: "Sign up now!"
       start_time: "Departure date"
       end_time: "Return date"
@@ -74,6 +74,11 @@ en:
       create_at: "Created at"
       updated_at: "Updated at"
       operations: "Operations"
+      placeholder_1: "Name"
+      placeholder_2: "Email"
+      placeholder_3: "Phone"
+      search: "Search"
+      add: "Add"
     new:
       title: "Sign Up"
       h1: "Sign Up"
@@ -192,6 +197,7 @@ en:
       created_at: "Created at"
       updated_at: "Updated at"
       operations: "Operations"
+      search: "Search"
   tours:
     nonexist: "This tour is not exist"
     form:
@@ -305,6 +311,8 @@ en:
       searching: " Search here..."
       includes_deleted: "Included deleted tours"
       excludes_deleted: "Only existed tours"
+      placeholder: "Tour name"
+      search: "Search"
     edit:
       title: "Edit detail of the tour"
       update: "Update"

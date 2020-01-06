@@ -1,9 +1,11 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".h1" %></h1>
 
-<%= form_tag(tour_details_path, method: :get) do %>
-  <%= text_field_tag :term, nil, placeholder: t(".searching"), style:"width: 93%" %>
-  <%= button_tag t("search_btn"), style:"float: right" %>
+<%= search_form_for @search, class: "form-inline" do |f| %>
+	<div class="form-group">
+    <%= f.text_field :tour_name_cont, class: "form-control", placeholder: t(".placeholder") %><br>
+  </div>
+  <%= f.submit t(".search"), class: "btn btn-default search-btn" %>
 <% end %>
 
 <% if can? :new, @tour_detail %>
@@ -23,7 +25,7 @@
   </div>
 <% end %>
 
-  <div class="col">
+<div class="col">
   <% @tour_details.each do |tour_detail| %>
     <div class="col-md">
       <div class="thumbnail tour-card">
@@ -83,7 +85,7 @@
         </div>
       </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 <%= will_paginate @tour_details %>

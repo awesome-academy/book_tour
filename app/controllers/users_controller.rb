@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @search = User.ransack(params[:q])
+    @users = @search.result.paginate(page: params[:page])
+    return if params.key?(:q)
+
     @users = User.where.not(confirmed_at: nil).paginate(page: params[:page])
   end
 

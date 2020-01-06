@@ -11,7 +11,7 @@ class Ability
         user_permission current_user
       end
     else
-      guest_permission current_user
+      guest_permission
     end
   end
 
