@@ -6,7 +6,7 @@
         <li><%= link_to t(".categories"), categories_path %>
         <li><%= link_to t(".tour_details"), tour_details_path %></li>
         <% if user_signed_in? %>
-          <% if current_user&.admin?%>
+          <% if can? :index, [@users, @tours, @revenues] %>
             <li><%= link_to t(".users"), users_path %></li>
             <li><%= link_to t(".tours"), tours_path %></li>
             <li><%= link_to t(".revenues"), revenues_path %></li>

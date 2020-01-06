@@ -6,7 +6,7 @@
   <%= button_tag t("search_btn"), style:"float: right" %>
 <% end %>
 
-<% if current_user&.admin? %>
+<% if can? :new, @tour_detail %>
   <div class="add_btn">
     <%= link_to new_tour_detail_path, class: "btn btn-sm btn-primary" do %>
       <span class="glyphicon glyphicon-plus"></span> <%= t ".add" %>
@@ -43,7 +43,7 @@
                 <li class="list-group-item"><%= t ".price" %>: <%= tour_detail.price %></li>
                 <li class="list-group-item"><%= tour_detail.people_number %> <%= t ".people_number" %></li>
               </ul>
-              <% if current_user&.role == "admin"%>
+              <% if can? [:edit, :destroy, :purge, :recover], tour_detail %>
                 <div class="btn-group">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= t "tours.index.actions" %> <span class="caret"></span>
@@ -86,4 +86,4 @@
     <% end %>
   </div>
 
-<%= will_paginate @tour_details%>
+<%= will_paginate @tour_details %>
