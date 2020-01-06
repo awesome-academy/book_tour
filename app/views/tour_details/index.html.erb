@@ -3,7 +3,11 @@
 
 <%= search_form_for @search, class: "form-inline" do |f| %>
 	<div class="form-group">
-    <%= f.text_field :tour_name_cont, class: "form-control", placeholder: t(".placeholder") %><br>
+    <%= f.text_field :tour_name_cont, class: "form-control", placeholder: t(".placeholder") %>
+  </div>
+  <div class="form-group">
+    <%= f.select :tour_category_id_eq, options_from_collection_for_select(Category.all, "id", "name", @search.tour_category_id_eq),
+                                       {include_blank: t(".category_filter")} %>
   </div>
   <%= f.submit t(".search"), class: "btn btn-default search-btn" %>
 <% end %>

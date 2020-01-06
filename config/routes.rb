@@ -43,6 +43,9 @@ Rails.application.routes.draw do
       put :recover
       delete :purge
     end
+    # collection do
+    #   match "search" => "tour_details#search", via: [:get, :post], as: :search
+    # end
   end
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
                                     registrations: "users/registrations",

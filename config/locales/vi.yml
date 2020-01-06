@@ -312,6 +312,7 @@ vi:
       excludes_deleted: "Chỉ các tour đang có"
       placeholder: "Tên tour"
       search: "Tìm kiếm"
+      category_filter: "Chọn thể loại"
     edit:
       title: "Chỉnh sửa thông tin tour"
       update: "Cập nhật"
@@ -390,6 +391,7 @@ vi:
       status: "Trạng thái"
       book_date: "Ngày đặt"
       departure_date: "Ngày khởi hành"
+      status_filter: "Trạng thái"
   revenues:
     nonexist: "Không tìm thấy bản ghi lợi nhuận này"
     index:

@@ -313,6 +313,7 @@ en:
       excludes_deleted: "Only existed tours"
       placeholder: "Tour name"
       search: "Search"
+      category_filter: "Choose a category"
     edit:
       title: "Edit detail of the tour"
       update: "Update"
@@ -387,6 +388,7 @@ en:
       status: "Status"
       book_date: "Book date"
       departure_date: "Departure date"
+      status_filter: "Booking status"
   revenues:
     nonexist: "This revenue ís not exist"
     index:

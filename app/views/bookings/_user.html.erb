@@ -1,3 +1,10 @@
+<%= search_form_for @search, class: "form-inline" do |f| %>
+  <div class="form-group">
+    <%= f.select :status_eq, [["Pending", "1"], ["Confirmed", "2"], ["Cancelled", "3"]],
+                                       {include_blank: t(".status_filter")} %>
+  </div>
+<%= f.submit t("tour_details.index.search"), class: "btn btn-default search-btn" %>
+<% end %>
 <% bookings.each do |booking| %>
   <% if booking.confirmed? %>
     <%= link_to booking do %>

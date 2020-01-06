@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
                 else
                   get_user_bookings
                 end
+    search_booking
   end
 
   def show
@@ -171,5 +172,12 @@ class BookingsController < ApplicationController
     else
       Revenue.create revenue: @booking.price, tour_detail_id: @tour_detail.id
     end
+  end
+
+  def search_booking
+    @search = Booking.ransack(params[:q])
+    @bookings = @search.result.includes(:tour_detail)
+                       .paginate(page: params[:page])
+    return if params.key?(:q)
   end
 end
