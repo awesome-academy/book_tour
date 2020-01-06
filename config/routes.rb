@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :revenues
+  resources :revenues do
+    collection do
+      get :revenue_detail
+    end
+  end
   resources :reviews do
     resources :comments
     resources :likes
@@ -39,6 +43,9 @@ Rails.application.routes.draw do
       put :recover
       delete :purge
     end
+    # collection do
+    #   match "search" => "tour_details#search", via: [:get, :post], as: :search
+    # end
   end
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks",
                                     registrations: "users/registrations",

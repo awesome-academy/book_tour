@@ -30,8 +30,8 @@ en:
   static_pages:
     home:
       title: "Home"
-      h1: "Welcome to Sun* Tour Booking"
-      title: "Sun* Tour Booking Application" 
+      big_title: "Welcome to Sun* Tour Booking"
+      small_title: "Sun* Tour Booking Application" 
       signupnow: "Sign up now!"
       start_time: "Departure date"
       end_time: "Return date"
@@ -74,6 +74,11 @@ en:
       create_at: "Created at"
       updated_at: "Updated at"
       operations: "Operations"
+      placeholder_1: "Name"
+      placeholder_2: "Email"
+      placeholder_3: "Phone"
+      search: "Search"
+      add: "Add"
     new:
       title: "Sign Up"
       h1: "Sign Up"
@@ -192,6 +197,7 @@ en:
       created_at: "Created at"
       updated_at: "Updated at"
       operations: "Operations"
+      search: "Search"
   tours:
     nonexist: "This tour is not exist"
     form:
@@ -305,6 +311,9 @@ en:
       searching: " Search here..."
       includes_deleted: "Included deleted tours"
       excludes_deleted: "Only existed tours"
+      placeholder: "Tour name"
+      search: "Search"
+      category_filter: "Choose a category"
     edit:
       title: "Edit detail of the tour"
       update: "Update"
@@ -379,6 +388,7 @@ en:
       status: "Status"
       book_date: "Book date"
       departure_date: "Departure date"
+      status_filter: "Booking status"
   revenues:
     nonexist: "This revenue ís not exist"
     index:
@@ -391,6 +401,7 @@ en:
       updated_at: "Updated at"
       operations: "Operations"
       confirm: "Are your sure?"
+      revenue_detail_btn: "See in detail"
     show:
       title: "Detail of revenue"
       h1: "Revenue of "
@@ -404,6 +415,8 @@ en:
     destroy:
       delete_success: "This record of revenue has been deleted"
       delete_failed: "Fail to delete the record of this revenue"
+    table:
+      title: "Revenue in detail"
   reviews:
     nonexist: "The review is not exist."
     index:

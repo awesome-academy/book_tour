@@ -7,15 +7,13 @@ class TourDetailsController < ApplicationController
                       if params.key?(:soft_deleted)
                         TourDetail.includes(:tour).all
                                   .paginate(page: params[:page])
-                      elsif params.key?(:term)
-                        TourDetail.search(params[:term])
-                                  .paginate(page: params[:page])
                       else
                         get_existed_tour_details
                       end
                     else
                       get_available_tour_details
                     end
+    search_tour
   end
 
   def new
@@ -86,6 +84,13 @@ class TourDetailsController < ApplicationController
   end
 
   private
+
+  def search_tour
+    @search = TourDetail.ransack(params[:q])
+    @tour_details = @search.result.includes(:tour)
+                           .paginate(page: params[:page])
+    return if params.key?(:q)
+  end
 
   def tour_detail_params
     params.require(:tour_detail).permit :start_time, :end_time, :tour_id,

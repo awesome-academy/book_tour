@@ -26,6 +26,11 @@ class RevenuesController < ApplicationController
     redirect_to revenues_path
   end
 
+  def revenue_detail
+    @revenues = Revenue.includes(:tour_detail).all.paginate(page: params[:page])
+    render :table
+  end
+
   private
 
   def load_revenue

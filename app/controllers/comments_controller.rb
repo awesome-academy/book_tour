@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :find_commentable, only: %i(create destroy)
-  load_and_authorize_resource
+  authorize_resource
 
   def new
     @comment = Comment.new

@@ -1,3 +1,7 @@
+$(document).on('turbolinks:load', function(){
+  $('#q_tour_category_id_eq').addClass('form-control');
+  $('#q_status_eq').addClass('form-control');
+});
 
 $(document).on('turbolinks:load', function() {
   $("div.reply-form").hide();

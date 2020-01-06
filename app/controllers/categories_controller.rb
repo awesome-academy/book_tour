@@ -3,6 +3,11 @@ class CategoriesController < ApplicationController
   authorize_resource
 
   def index
+    @search = Category.ransack(params[:q])
+    @categories = @search.result
+                         .paginate(page: params[:page])
+    return if params.key?(:q)
+
     @categories = Category.all.paginate(page: params[:page])
   end
 
